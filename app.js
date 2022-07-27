@@ -31,7 +31,8 @@ const fileStorageEngine = multer.diskStorage({
 //   },
 // });
 
-
+var mongoUri =
+  'mongodb+srv://rt:bKhh8FZYYXOJNFJ1@bodhi-journey.hzyub.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 mongoose.connect(mongoUri).then(() => {
   console.log('Successfully connected');
 });
@@ -57,7 +58,8 @@ var storage = new GridFsStorage({
 
 // var gfs;
 const conn = mongoose.createConnection(
-process.env.MONGO_URI);
+  'mongodb+srv://rt:bKhh8FZYYXOJNFJ1@bodhi-journey.hzyub.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+);
 
 // conn.once('open',()=>{
 //     gfs = Grid(conn.db,mongoose.mongo);

@@ -1,0 +1,112 @@
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <link rel='stylesheet' href='css/style.css' />
+
+    <title>Bodhi Journey</title>
+  </head>
+  <body>
+
+    {{>nav}}
+
+    <section id='hero'>
+      <h1>A Place to Explore Spiritual Questions</h1>
+    </section>
+    
+    <section id='articles'>
+      <div id='articles-section-header'>
+        <h1>Recent Articles</h1>
+      </div>
+      <div id='articles-container'>
+        {{#each posts}}
+          <div class='article'>
+            <div class='article-img'>
+              <a href="http://www.localhost:3000/article/{{this._id}}">
+              <img src='http://www.localhost:3000/file/{{this.title}}' />
+              </a>
+            </div>
+            <h3>{{this.title}}</h3>
+            <h5 style="text-align:left;">{{this.author}}</h5>
+            <div class="meta-description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit magni atque earum maiores sed vero possimus repudiandae assumenda, veniam eius.
+            </div>
+          </div>
+        {{/each}}
+      </div>
+    </section>
+    <section id="practical-guides">
+      <div class="guide">
+          <img src="images/guide.png">
+          <h2>Download Free Guide Top 10 Meditation Exercises</h2>
+          <button class="download-btn">Download</button>
+      </div>
+      <div class="guide">
+       <iframe width="560" height="315" src="https://www.youtube.com/embed/ZArIBiRkGfk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-column">
+          <h2>Lorem ipsum dolor sit amet.</h2>
+      </div>
+      <div class="footer-column">
+            <h2>Lorem ipsum dolor sit amet.</h2>
+      </div>
+      <div class="footer-column">
+          <h2>Lorem ipsum dolor sit amet.</h2>
+      </div>
+        
+    </footer>
+
+    <div class="lead-pop-up">
+
+      <div class="exit">
+          <h1>X</h1>
+      </div>
+      <h1>Download Our Free Guide!</h1>
+      <form>
+          <div class="form-group">
+              <label>Name</label>
+              <input type="text" name="firstName">
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" name="email">
+        </div>
+        <div class="form-group">
+          <input type="submit">
+        </div>
+      </form>
+    </div>
+
+    <script>
+
+
+      var currentPageOffset;
+      const downloadButton = document.querySelector('.download-btn')
+      const leadPopUp = document.querySelector('.lead-pop-up')
+      const leadPopUpExitBtn = document.querySelector('.lead-pop-up .exit')
+      downloadButton.addEventListener('click',()=>{
+        leadPopUp.style.zIndex="100";
+        leadPopUp.style.opacity="1";
+        leadPopUp.style.top=`${pageYOffset}px`
+        currentPageOffset = pageYOffset;
+        window.addEventListener('scroll',disableScroll)
+      })
+
+      const disableScroll = function(){
+        window.scrollTo(0,currentPageOffset)
+      }
+
+      leadPopUpExitBtn.addEventListener('click',()=>{
+        leadPopUp.style.zIndex='-1'
+        leadPopUp.style.opacity='0'
+        window.removeEventListener('scroll',disableScroll)
+      })
+
+    </script>
+
+  </body>
+</html>

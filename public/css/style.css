@@ -1,0 +1,284 @@
+
+  #hero{
+    height:90vh;;
+    background-image:url('https://ychef.files.bbci.co.uk/1600x900/p021xf3f.webp');
+    background-size:cover;
+    position:relative;
+  }
+
+  #hero::after{
+    content:'';
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-color:black;
+    opacity:0.3;
+  }
+
+  #hero h1{
+    position:relative;
+    top:50%;
+    left:4%;
+    z-index:10;
+    transform:translateY(-50%);
+    font-size:2rem;
+    color:white;
+    
+  }
+
+ #articles-container{
+   display:grid;
+   grid-template-columns:repeat(3,30%);
+   grid-column-gap: 25px;
+   row-gap:75px;
+   padding:100px 0;
+   background-color:whitesmoke;
+ }
+
+ #articles-section-header{
+   padding:20px;
+   text-align:center;
+   font-size:30px;
+   font-family:sans-serif;
+   background-color:whitesmoke;
+ }
+
+.article{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  cursor:pointer;
+  padding:20px 0;
+}
+
+.article:hover{
+  background-color:lightgray;
+}
+
+.article-img{
+ width:100%;
+ text-align:center;
+}
+.article h3{
+  font-size:1.35rem;
+  margin-top:1vh;
+  padding:10px;
+  width:80%;
+  text-align:left;
+}
+
+.article h5{
+  width:80%;
+  text-align:left;
+}
+
+.meta-description{
+  width:80%;
+}
+.article-img img{
+  width:300px;
+  height:300px;
+  padding:30px 0;
+  object-fit:cover;
+
+}
+
+#about-us{
+  padding:100px 0;
+}
+
+#about-us .content-container{
+  display:flex;
+}
+
+
+.about-us-img img{
+  width:40vw;
+  height:40vw;
+  box-sizing:border-box;
+  padding:30px;
+}
+
+.about-us-description{
+  width:70vw;
+  box-sizing:border-box;
+  padding:15px;
+}
+
+#about-us{
+  overflow-x:hidden;
+}
+
+footer{
+  background-color:black;
+  height:30vh;
+  display:flex;
+}
+
+.footer-column{
+  width:33%;
+  color:white;
+}
+
+
+
+
+#practical-guides{
+  display:flex;
+  padding:20vh 0;
+  width:100%;
+}
+
+.guide img{
+  width:200px;
+  height:200px;
+  object-fit:contain;
+}
+.guide{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+  width:50%;
+}
+
+.guide button{
+  border:none;
+  padding:1rem 2.3rem;
+  background-color:navy;
+  color:white;
+  border-radius:30px;
+  cursor:pointer;
+  margin-top:30px;
+  width:20vw;
+  box-sizing:border-box;
+}
+
+.guide button:hover{
+  background-color:lightblue;
+  color:black;
+}
+
+.lead-pop-up{
+  position:absolute;
+  background-color:white;
+  top:0;
+  width:100%;
+  height:100%;
+  z-index:-1;
+  text-align:center;
+  opacity:0;
+  transition:opacity 1s ease-in-out;
+  padding:50px 0;
+  box-sizing:border-box;
+}
+
+.lead-pop-up .exit{
+  position:absolute;
+  top:0;
+  right:0;
+  padding:0;
+  margin:0 20px 0 0 ;
+  cursor:pointer;
+}
+
+.lead-pop-up .exit:hover{
+  color:red;
+}
+
+.lead-pop-up form{
+  width:100%;
+  text-align:center;
+}
+
+.lead-pop-up form .form-group{
+  text-align:center;
+}
+
+.lead-pop-up form input,.lead-pop-up form label{
+  width:80%;
+  margin:9px 0;
+  padding:10px 0;
+  display:inline-block;
+}
+
+.lead-pop-up .form-group input[type="submit"]{
+  padding:0.5rem 1.2rem;
+  background-color:black;
+  color:white;
+  cursor:pointer;
+}
+
+.lead-pop-up .form-group input[type="submit"]:hover{
+  background-color:white;
+  color:black;
+}
+
+  @media screen and (max-width:612px){
+      #hero{
+          height:30vh;
+          background-size:100% 100%;
+      }
+
+      #hero h1{
+        font-size:1rem;
+      }
+      /* nav,.list-container, ul{
+          background-color:whitesmoke;
+    
+      } */
+    .toggler,.close-mobile-menu{
+      display:block;
+    }
+
+    .toggler{
+      margin: auto 0;
+    }
+    .close-mobile-menu{
+      margin-left:auto;
+      font-size:2rem;
+    }
+    .list-container{
+      position:absolute;
+      padding:35px 10px;
+      min-width:70%;
+      max-width:75%;
+      height:90%;
+      top:0;
+      left:0;
+      z-index:1000;
+    }
+    .menu-slide-in{
+    transform:translateX(0);
+  }
+    .menu-slide-out{
+    transform:translateX(-800px);
+  }
+  
+    .list-container ul{
+      flex-direction:column;
+      margin-top:15vh;
+      width:100%;
+  
+    }
+    .list-container ul li{
+      margin-left:0;
+      font-size:0.8rem;
+      padding:15px 0;
+      font-weight:200;
+      border-bottom:1px black dotted;
+    }
+    #articles-container{
+      grid-template-columns:1fr;
+    }
+
+    .article-img img{
+      width:200px;
+      height:200px;
+    }
+  }
+  

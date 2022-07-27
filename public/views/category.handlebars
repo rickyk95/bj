@@ -1,0 +1,40 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/category.css">
+    <title>{{category}}</title>
+</head>
+<body>
+
+    {{>nav}}
+    <div id="hero">
+        <h1>{{category}}</h1>
+    </div>
+    <section id='articles'>
+      <div id='articles-section-header'>
+        <h1>Recent Articles</h1>
+      </div>
+      <div id='articles-container'>
+        {{#each posts}}
+          <div class='article'>
+            <div class='article-img'>
+              <a href="http://www.localhost:3000/article/{{this._id}}">
+              <img src='http://www.localhost:3000/file/{{this.title}}' />
+              </a>
+            </div>
+            <h3>{{this.title}}</h3>
+            <h5 style="text-align:left;">{{this.author}}</h5>
+            <div class="meta-description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit magni atque earum maiores sed vero possimus repudiandae assumenda, veniam eius.
+            </div>
+          </div>
+        {{/each}}
+      </div>
+    </section>
+</body>
+</html>

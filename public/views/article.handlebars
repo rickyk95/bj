@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/article.css">
+    <meta name="description" content="{{this.metaDescription}}">
+    <title>{{this.title}}</title>
+</head>
+<body>
+   {{>nav}}
+
+    <div class="article-container">
+        <div class="article-content">
+            <div class="article-title">
+                <h1>{{this.title}}</h1>
+            </div>
+            <div class="article-image">
+                <img  width="500" height="500" src="{{this.img}}" alt="">
+            </div>
+            <div class="article-text">
+                {{{this.post}}}
+            </div>
+        </div>
+        <div class="suggested-articles">
+            <div class="suggestions-container">
+              <h3>Suggested Articles</h3>
+                <ul>
+                   <li><a href="#">Top 3 Ways to Meditate</a></li>
+                   <li><a href="#">These Yoga Tips Will Change Your Life</a></li>
+                   <li><a href="#">Multiple Perspectives on Trauama Release</a></li>
+                   <li><a href="#">How Projection Works</a></li>
+                   <li><a href="#">Multiple Perspectives on Trauama Release</a></li>
+                   <li><a href="#">How Projection Works</a></li>
+                   <li><a href="#">Multiple Perspectives on Trauama Release</a></li>
+                   <li><a href="#">How Projection Works</a></li>
+                </ul>
+        </div>
+        </div>
+    </div>
+    
+       {{this.metaDescription}}
+
+  <h5>{{this.category}}</h5> 
+</body>
+
+</html>

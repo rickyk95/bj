@@ -1,0 +1,52 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+h1{
+    text-align:center;
+}
+
+form{
+    margin-left:20px;
+    padding:20px;
+    box-sizing:border-box;
+    width:80%;
+}
+input,textarea,select{
+    padding:5px;
+    display:block;
+    border-radius:5px;
+    margin:10px 0;
+    width:100%;
+    box-sizing:border-box;
+    position:relative;
+}
+
+.form-group{
+    width:100%;
+    position:relative;
+    margin:10px 0;
+}
+
+label{
+    margin:10px 0;
+    font-size:20px;
+}
+button{
+    padding:8px 40px;
+    background-color:navy;
+    color:white;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.form-group.button-container{
+    display:flex;
+    justify-content:flex-end;
+}
+
+#quill-editor{
+    height:500px;
+}
+
